@@ -38,12 +38,12 @@ informative:
 
 --- abstract
 
-This document describes a set of requirements for messengers when attempting to
-interoperate with another messenger.
+This document describes a set of requirements for messaging services when attempting
+to interoperate with another messaging service.
 
 The requirements outlined here are intended to be independent of any particular
-protocol or messenger, instead simply describing the features an interoperable
-messenger should have. Messengers should be expected to go beyond the requirements
+protocol or messaging service, instead simply describing the features an interoperable
+messaging service should have. Services should be expected to go beyond the requirements
 listed in this document, as is anticipated to be possible with MIMI's future content
 format.
 
@@ -52,13 +52,24 @@ format.
 
 # Introduction
 
-TODO Introduction
+MIMI's charter states that it will identify an extensible baseline set of messaging
+features, and specify a content format to allow that feature set to be implemented
+interoperably. The charter also states that MIMI will make use of End-to-End Encryption,
+and that the content format chosen must support E2EE.
 
+This document describes a possible set of features that all messaging services within
+the MIMI scope should support, and by extension what MIMI should support in its content
+format. This document additionally touches on extensibility by describing what is considered
+to be the absolute minimum a messaging service should support and what would be desirable
+for maximum interoperability over MIMI.
 
-# Conventions and Definitions
+# Minimum Feature Set
 
-{::boilerplate bcp14-tagged}
+TODO Section
 
+# Maximum Feature Set
+
+TODO Section
 
 # Security Considerations
 
