@@ -19,11 +19,11 @@
 # Change the file extension to match the format (.xml for XML, etc...)
 #
 ###
-title: "TODO - Your title"
-abbrev: "TODO - Abbreviation"
+title: "Requirements of Interoperable Messaging"
+abbrev: "Requirements of an Interoperable Messaging Protocol"
 category: info
 
-docname: draft-todo-yourname-protocol-latest
+docname: draft-ralston-mimi-messaging-requirements-latest
 submissiontype: IETF  # also: "independent", "IAB", or "IRTF"
 number:
 date:
@@ -32,9 +32,11 @@ v: 3
 area: AREA
 workgroup: WG Working Group
 keyword:
- - next generation
- - unicorn
- - sparkling distributed ledger
+ - mimi
+ - messaging
+ - requirements
+ - interoperability
+ - minimum
 venue:
   group: WG
   type: Working Group
@@ -45,9 +47,9 @@ venue:
 
 author:
  -
-    fullname: Your Name Here
-    organization: Your Organization Here
-    email: your.email@example.com
+    fullname: Travis Ralston
+    organization: The Matrix.org Foundation C.I.C.
+    email: travisr@matrix.org
 
 normative:
 
@@ -56,7 +58,14 @@ informative:
 
 --- abstract
 
-TODO Abstract
+This document describes a set of requirements for messengers when attempting to
+interoperate with another messenger.
+
+The requirements outlined here are intended to be independent of any particular
+protocol or messenger, instead simply describing the features an interoperable
+messenger should have. Messengers should be expected to go beyond the requirements
+listed in this document, as is anticipated to be possible with MIMI's future content
+format.
 
 
 --- middle
