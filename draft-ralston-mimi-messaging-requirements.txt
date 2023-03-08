@@ -1,0 +1,125 @@
+
+
+
+
+More Instant Messaging Interoperability                       T. Ralston
+Internet-Draft                          The Matrix.org Foundation C.I.C.
+Intended status: Informational                              8 March 2023
+Expires: 9 September 2023
+
+
+                Requirements of Interoperable Messaging
+            draft-ralston-mimi-messaging-requirements-latest
+
+Abstract
+
+   This document describes a set of requirements for messaging services
+   when attempting to interoperate with another messaging service.
+
+   The requirements outlined here are intended to be independent of any
+   particular protocol or messaging service, instead simply describing
+   the features an interoperable messaging service should have.
+   Services should be expected to go beyond the requirements listed in
+   this document, as is anticipated to be possible with MIMI's future
+   content format.
+
+About This Document
+
+   This note is to be removed before publishing as an RFC.
+
+   The latest revision of this draft can be found at
+   https://turt2live.github.io/ietf-mimi-messaging-requirements/draft-
+   ralston-mimi-messaging-requirements.html.  Status information for
+   this document may be found at https://datatracker.ietf.org/doc/draft-
+   ralston-mimi-messaging-requirements/.
+
+   Discussion of this document takes place on the More Instant Messaging
+   Interoperability Working Group mailing list (mailto:mimi@ietf.org),
+   which is archived at https://mailarchive.ietf.org/arch/browse/mimi/.
+   Subscribe at https://www.ietf.org/mailman/listinfo/mimi/.
+
+   Source for this draft and an issue tracker can be found at
+   https://github.com/turt2live/ietf-mimi-messaging-requirements.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 9 September 2023.
+
+Copyright Notice
+
+   Copyright (c) 2023 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
+
+Table of Contents
+
+   1.  Introduction
+   2.  Minimum Feature Set
+   3.  Maximum Feature Set
+   4.  Security Considerations
+   5.  IANA Considerations
+   Acknowledgments
+   Author's Address
+
+1.  Introduction
+
+   MIMI's charter states that it will identify an extensible baseline
+   set of messaging features, and specify a content format to allow that
+   feature set to be implemented interoperably.  The charter also states
+   that MIMI will make use of End-to-End Encryption, and that the
+   content format chosen must support E2EE.
+
+   This document describes a possible set of features that all messaging
+   services within the MIMI scope should support, and by extension what
+   MIMI should support in its content format.  This document
+   additionally touches on extensibility by describing what is
+   considered to be the absolute minimum a messaging service should
+   support and what would be desirable for maximum interoperability over
+   MIMI.
+
+2.  Minimum Feature Set
+
+   TODO Section
+
+3.  Maximum Feature Set
+
+   TODO Section
+
+4.  Security Considerations
+
+   TODO Security
+
+5.  IANA Considerations
+
+   This document has no IANA actions.
+
+Acknowledgments
+
+   TODO acknowledge.
+
+Author's Address
+
+   Travis Ralston
+   The Matrix.org Foundation C.I.C.
+   Email: travisr@matrix.org
