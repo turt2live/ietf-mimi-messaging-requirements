@@ -1171,7 +1171,12 @@ format.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
             <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-minimum-feature-set" class="internal xref">Minimum Feature Set</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
-            <p id="section-toc.1-1.3.1" class="keepWithNext"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-maximum-feature-set" class="internal xref">Maximum Feature Set</a></p>
+            <p id="section-toc.1-1.3.1"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-maximum-feature-set" class="internal xref">Maximum Feature Set</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.1">
+                <p id="section-toc.1-1.3.2.1.1" class="keepWithNext"><a href="#section-3.1" class="auto internal xref">3.1</a>.  <a href="#name-moderation-and-personal-saf" class="internal xref">Moderation and Personal Safety Functionality</a></p>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
@@ -1180,10 +1185,7 @@ format.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
             <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
-            <p id="section-toc.1-1.6.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
-</li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
-            <p id="section-toc.1-1.7.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-address" class="internal xref">Author's Address</a></p>
+            <p id="section-toc.1-1.6.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-authors-address" class="internal xref">Author's Address</a></p>
 </li>
         </ul>
 </nav>
@@ -1210,7 +1212,29 @@ for maximum interoperability over MIMI.<a href="#section-1-2" class="pilcrow">¶
       <h2 id="name-minimum-feature-set">
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-minimum-feature-set" class="section-name selfRef">Minimum Feature Set</a>
       </h2>
-<p id="section-2-1">TODO Section<a href="#section-2-1" class="pilcrow">¶</a></p>
+<p id="section-2-1">The following are the minimum features for an interoperable messaging service:<a href="#section-2-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-2-2.1">Encryption, as required by MIMI's charter, and all associated features (device tracking, etc).<a href="#section-2-2.1" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="section-2-2.2">Conversation history for search, scrollback, and filling gaps between messaging services.<a href="#section-2-2.2" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="section-2-2.3">Text and rich text to represent nearly all features persisted to the conversation history.<a href="#section-2-2.3" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="section-2-2.4">Ability to redact, remove, or delete a message, both as an individual and as a room moderator.<a href="#section-2-2.4" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="section-2-2.5">Invite, kick, ban, and leave membership states within a conversation.<a href="#section-2-2.5" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="section-2-2.6">Display names and avatars for users, to allow for personalization beyond their identifier or
+username.<a href="#section-2-2.6" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="section-2-2.7">Direct messaging, or conversations of exactly 2 users. The underlying protocol might choose
+to treat DMs no different from multi-user conversations, though messaging services might
+apply semantics to represent DMs usefully to users.<a href="#section-2-2.7" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="section-2-2.8">Differentiation between users and their abilities. For example, roles for Moderators, Admins,
+etc.<a href="#section-2-2.8" class="pilcrow">¶</a>
+</li>
+      </ul>
 </section>
 </div>
 <div id="maximum-feature-set">
@@ -1218,7 +1242,62 @@ for maximum interoperability over MIMI.<a href="#section-1-2" class="pilcrow">¶
       <h2 id="name-maximum-feature-set">
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-maximum-feature-set" class="section-name selfRef">Maximum Feature Set</a>
       </h2>
-<p id="section-3-1">TODO Section<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-1">With extensibility in mind, this list is not exhaustive but does outline what the content
+format for MIMI should be capable of supporting. The features that messaging services currently
+support are:<a href="#section-3-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-3-2.1">Names, topics/descriptions, and avatars for conversations for personalization. Messaging
+services which don't support these aesthetic features would simply not show them.<a href="#section-3-2.1" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="section-3-2.2">Read receipts/indicators when others in the room have read the message. If not supported by
+a messaging service in an interoperable environment, that messaging service would simply not
+produce receipts and ultimately ignore received receipts - a safe failure mode for the feature.<a href="#section-3-2.2" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="section-3-2.3">Typing notifications when others in the room are writing a message. Like read receipts, not
+supporting these simply means they won't be emitted or displayed, which is a safe failure mode
+for this feature.<a href="#section-3-2.3" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="section-3-2.4">Presence or online state. Like typing notifications and read receipts above, this could safely
+fall back to just not being handled by messaging services if needed.<a href="#section-3-2.4" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="section-3-2.5">Images, videos, files, and audio in messages. The content format would specify a fallback to
+(rich) text to support messaging services that are primarily text-based, such as by specifying
+a URL for users to click on to view the relevant media. Voice messages can be represented as
+audio file uploads with minor decoration metadata in the content format.<a href="#section-3-2.5" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="section-3-2.6">Replies (also called "rich quoting") to reference specific messages or parts of messages. A
+content format specification might define a fallback format to ensure messaging services that
+do not support replies can still render something which looks vaguely like a reply.<a href="#section-3-2.6" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="section-3-2.7">Threads to organize a conversation. A content format specification might define a fallback
+to Replies to keep a reader's context in tact when using a messaging service that doesn't
+support threads.<a href="#section-3-2.7" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="section-3-2.8">VoIP. Messaging services which don't support VoIP could be asked to say "a call is happening,
+but you can't join on this device" under a content format, or, if the conference protocol
+allows, a link for the user to click and join the call externally.<a href="#section-3-2.8" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="section-3-2.9">Message editing. A content format could define a fallback which references the edited message
+with a reply and using a difference syntax to highlight applicable changes.<a href="#section-3-2.9" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="section-3-2.10">Reactions. A content format might decide to use replies to associate an emoji reaction with
+a given message, or simply as nothing.<a href="#section-3-2.10" class="pilcrow">¶</a>
+</li>
+      </ul>
+<p id="section-3-3">As implied above, a future content format document would be responsible for describing the exact
+details of how features fall back, if at all. This document offers non-binding suggestions.<a href="#section-3-3" class="pilcrow">¶</a></p>
+<div id="moderation-and-personal-safety-functionality">
+<section id="section-3.1">
+        <h3 id="name-moderation-and-personal-saf">
+<a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-moderation-and-personal-saf" class="section-name selfRef">Moderation and Personal Safety Functionality</a>
+        </h3>
+<p id="section-3.1-1">Currently out of scope for MIMI, moderation, anti-spam, etc functionality would likely be considered
+part of the "Maximum Feature Set". A suitable protocol could support functionality such as ignoring
+or blocking individual users, "who can send invites to me" controls, and similar features without
+needing to have a specific content format specification necessarily. For example, preventing invites
+from being received could simply be a rejected action over the delivery and transport layer.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+</section>
+</div>
 </section>
 </div>
 <div id="security-considerations">
@@ -1226,7 +1305,8 @@ for maximum interoperability over MIMI.<a href="#section-1-2" class="pilcrow">¶
       <h2 id="name-security-considerations">
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
-<p id="section-4-1">TODO Security<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-4-1">Security considerations for these features would be handled by other documents, such as a content
+format document.<a href="#section-4-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="iana-considerations">
@@ -1237,16 +1317,8 @@ for maximum interoperability over MIMI.<a href="#section-1-2" class="pilcrow">¶
 <p id="section-5-1">This document has no IANA actions.<a href="#section-5-1" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="acknowledgments">
-<section id="appendix-A">
-      <h2 id="name-acknowledgments">
-<a href="#name-acknowledgments" class="section-name selfRef">Acknowledgments</a>
-      </h2>
-<p id="appendix-A-1">TODO acknowledge.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
-</section>
-</div>
 <div id="authors-addresses">
-<section id="appendix-B">
+<section id="appendix-A">
       <h2 id="name-authors-address">
 <a href="#name-authors-address" class="section-name selfRef">Author's Address</a>
       </h2>
