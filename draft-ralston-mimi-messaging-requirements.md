@@ -38,30 +38,25 @@ informative:
 
 --- abstract
 
-This document describes a set of requirements for messaging services when attempting
-to interoperate with another messaging service.
+This document describes a set of requirements for messaging services to interoperate.
 
-The requirements outlined here are intended to be independent of any particular
-protocol or messaging service, instead simply describing the features an interoperable
-messaging service should have. Services should be expected to go beyond the requirements
-listed in this document, as is anticipated to be possible with MIMI's future content
-format.
-
+These requirements are independent of any particular protocol or messaging service,
+describing the set of features an interoperable messaging service should support.
+Services should expect to go beyond the requirements listed here, as MIMI's future
+content format evolves.
 
 --- middle
 
 # Introduction
 
-MIMI's charter states that it will identify an extensible baseline set of messaging
-features, and specify a content format to allow that feature set to be implemented
-interoperably. The charter also states that MIMI will make use of End-to-End Encryption,
-and that the content format chosen must support E2EE.
+MIMI's charter seeks to establish an extensible set of messaging features which make
+use of a future content format published by MIMI. The charter also states that MIMI will
+use End-to-End Encryption (E2EE), and that the content format must support E2EE.
 
-This document describes a possible set of features that all messaging services within
-the MIMI scope should support, and by extension what MIMI should support in its content
-format. This document additionally touches on extensibility by describing what is considered
-to be the absolute minimum a messaging service should support and what would be desirable
-for maximum interoperability over MIMI.
+This document describes a possible set of features that messaging services should support.
+By extension, it also includes what MIMI should support in its future content format.
+This document also explores extensibility by contrasting a minimum and maximum feature
+set for interoperability over MIMI.
 
 # Minimum Feature Set
 
