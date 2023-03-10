@@ -77,20 +77,18 @@ The following are the minimum features for an interoperable messaging service:
 
 # Maximum Feature Set
 
-With extensibility in mind, this list is not exhaustive but does outline what the content
-format for MIMI should be capable of supporting. The features that messaging services currently
-support are:
+This list is not exhaustive, but outlines some examples for what the content format should be
+capable of supporting. The features that messaging services currently support are:
 
 * Names, topics/descriptions, and avatars for conversations for personalization. Messaging
-  services which don't support these aesthetic features would simply not show them.
-* Read receipts/indicators when others in the room have read the message. If not supported by
-  a messaging service in an interoperable environment, that messaging service would simply not
-  produce receipts and ultimately ignore received receipts - a safe failure mode for the feature.
-* Typing notifications when others in the room are writing a message. Like read receipts, not
-  supporting these simply means they won't be emitted or displayed, which is a safe failure mode
-  for this feature.
-* Presence or online state. Like typing notifications and read receipts above, this could safely
-  fall back to just not being handled by messaging services if needed.
+  services which don't support these aesthetic features would ignore them.
+* Read receipts/indicators when others in the room have read the message. If a messaging service
+  doesn't support them, that service would not produce receipts and ignore received receipts.
+  This is a safe failure mode for the feature.
+* Typing notifications when others in the room are writing a message. Like read receipts, services
+  have the same safe failure mode.
+* Presence or online state. Like read receipts or typing notifications, presence has the same safe
+  fallback mode.
 * Images, videos, files, and audio in messages. The content format would specify a fallback to
   (rich) text to support messaging services that are primarily text-based, such as by specifying
   a URL for users to click on to view the relevant media. Voice messages can be represented as
