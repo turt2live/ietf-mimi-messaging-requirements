@@ -60,10 +60,12 @@ set for interoperability over MIMI.
 
 # Minimum Feature Set
 
-The following are the minimum features for an interoperable messaging service:
+The following are the minimum features for an interoperable messaging service. We consider
+group communication on the basis that 1:1 communication can typically be modelled as a subset of
+group communication.
 
 * Encryption, as required by MIMI's charter, and all associated features (device tracking, etc).
-* Conversation history for search, scrollback, and filling gaps between messaging services.
+* Reliable synchronisation of messages between messaging services, avoiding gaps.
 * Text and rich text to represent nearly all features persisted to the conversation history.
 * Ability to redact, remove, or delete a message, both as an individual and as a room moderator.
 * Invite, kick, ban, and leave membership states within a conversation.
@@ -89,9 +91,12 @@ capable of supporting. The features that messaging services currently support ar
   have the same safe failure mode.
 * Presence or online state. Like read receipts or typing notifications, presence has the same safe
   fallback mode.
+* Ability to reliably synchronise visible conversation history between messaging services.
+* Ability to port conversation history between messaging services.
 * Images, videos, files, and audio in messages. The content format would specify a fallback to
   (rich) text to support messaging services that are primarily text-based, such as by specifying
-  a URL for users to click on to view the relevant media. Voice messages can be represented as
+  a URL for users to click on to view the relevant media.
+* Voice messages are semantically distinct from file transfers, but can be represented as
   audio file uploads with minor decoration metadata in the content format.
 * Replies (also called "rich quoting") to reference specific messages or parts of messages. A
   content format specification might define a fallback format to ensure messaging services that
@@ -99,13 +104,14 @@ capable of supporting. The features that messaging services currently support ar
 * Threads to organize a conversation. A content format specification might define a fallback
   to Replies to keep a reader's context in tact when using a messaging service that doesn't
   support threads.
-* VoIP. Messaging services which don't support VoIP could be asked to say "a call is happening,
+* 1:1 VoIP. Messaging services which don't support VoIP could be asked to say "a call is happening,
   but you can't join on this device" under a content format, or, if the conference protocol
   allows, a link for the user to click and join the call externally.
+* Multi-party VoIP.
 * Message editing. A content format could define a fallback which references the edited message
   with a reply and using a difference syntax to highlight applicable changes.
-* Reactions. A content format might decide to use replies to associate an emoji reaction with
-  a given message, or simply as nothing.
+* Reactions. A content format might decide to provide a fallback by using replies to associate an
+  emoji or textual reaction to a given message, or simply ignore it.
 
 As implied above, a future content format document would be responsible for describing the exact
 details of how features fall back, if at all. This document offers non-binding suggestions.
