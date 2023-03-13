@@ -1059,7 +1059,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Ralston</td>
-<td class="center">Expires 11 September 2023</td>
+<td class="center">Expires 14 September 2023</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1072,12 +1072,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-ralston-mimi-messaging-requirements-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2023-03-10" class="published">10 March 2023</time>
+<time datetime="2023-03-13" class="published">13 March 2023</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2023-09-11">11 September 2023</time></dd>
+<dd class="expires"><time datetime="2023-09-14">14 September 2023</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -1131,7 +1131,7 @@ content format evolves.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 11 September 2023.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 14 September 2023.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1206,11 +1206,13 @@ set for interoperability over MIMI.<a href="#section-1-2" class="pilcrow">¶</a>
       <h2 id="name-minimum-feature-set">
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-minimum-feature-set" class="section-name selfRef">Minimum Feature Set</a>
       </h2>
-<p id="section-2-1">The following are the minimum features for an interoperable messaging service:<a href="#section-2-1" class="pilcrow">¶</a></p>
+<p id="section-2-1">The following are the minimum features for an interoperable messaging service. We consider
+group communication on the basis that 1:1 communication can typically be modelled as a subset of
+group communication.<a href="#section-2-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-2-2.1">Encryption, as required by MIMI's charter, and all associated features (device tracking, etc).<a href="#section-2-2.1" class="pilcrow">¶</a>
 </li>
-        <li class="normal" id="section-2-2.2">Conversation history for search, scrollback, and filling gaps between messaging services.<a href="#section-2-2.2" class="pilcrow">¶</a>
+        <li class="normal" id="section-2-2.2">Reliable synchronisation of messages between messaging services, avoiding gaps.<a href="#section-2-2.2" class="pilcrow">¶</a>
 </li>
         <li class="normal" id="section-2-2.3">Text and rich text to represent nearly all features persisted to the conversation history.<a href="#section-2-2.3" class="pilcrow">¶</a>
 </li>
@@ -1252,28 +1254,36 @@ have the same safe failure mode.<a href="#section-3-2.3" class="pilcrow">¶</a>
         <li class="normal" id="section-3-2.4">Presence or online state. Like read receipts or typing notifications, presence has the same safe
 fallback mode.<a href="#section-3-2.4" class="pilcrow">¶</a>
 </li>
-        <li class="normal" id="section-3-2.5">Images, videos, files, and audio in messages. The content format would specify a fallback to
+        <li class="normal" id="section-3-2.5">Ability to reliably synchronize visible conversation history between messaging services.<a href="#section-3-2.5" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="section-3-2.6">Ability to port conversation history between messaging services.<a href="#section-3-2.6" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="section-3-2.7">Images, videos, files, and audio in messages. The content format would specify a fallback to
 (rich) text to support messaging services that are primarily text-based, such as by specifying
-a URL for users to click on to view the relevant media. Voice messages can be represented as
-audio file uploads with minor decoration metadata in the content format.<a href="#section-3-2.5" class="pilcrow">¶</a>
+a URL for users to click on to view the relevant media.<a href="#section-3-2.7" class="pilcrow">¶</a>
 </li>
-        <li class="normal" id="section-3-2.6">Replies (also called "rich quoting") to reference specific messages or parts of messages. A
+        <li class="normal" id="section-3-2.8">Voice messages are semantically distinct from file transfers, but can be represented as
+audio file uploads with minor decoration metadata in the content format.<a href="#section-3-2.8" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="section-3-2.9">Replies (also called "rich quoting") to reference specific messages or parts of messages. A
 content format specification might define a fallback format to ensure messaging services that
-do not support replies can still render something which looks vaguely like a reply.<a href="#section-3-2.6" class="pilcrow">¶</a>
+do not support replies can still render something which looks vaguely like a reply.<a href="#section-3-2.9" class="pilcrow">¶</a>
 </li>
-        <li class="normal" id="section-3-2.7">Threads to organize a conversation. A content format specification might define a fallback
+        <li class="normal" id="section-3-2.10">Threads to organize a conversation. A content format specification might define a fallback
 to Replies to keep a reader's context in tact when using a messaging service that doesn't
-support threads.<a href="#section-3-2.7" class="pilcrow">¶</a>
+support threads.<a href="#section-3-2.10" class="pilcrow">¶</a>
 </li>
-        <li class="normal" id="section-3-2.8">VoIP. Messaging services which don't support VoIP could be asked to say "a call is happening,
+        <li class="normal" id="section-3-2.11">1:1 VoIP. Messaging services which don't support VoIP could be asked to say "a call is happening,
 but you can't join on this device" under a content format, or, if the conference protocol
-allows, a link for the user to click and join the call externally.<a href="#section-3-2.8" class="pilcrow">¶</a>
+allows, a link for the user to click and join the call externally.<a href="#section-3-2.11" class="pilcrow">¶</a>
 </li>
-        <li class="normal" id="section-3-2.9">Message editing. A content format could define a fallback which references the edited message
-with a reply and using a difference syntax to highlight applicable changes.<a href="#section-3-2.9" class="pilcrow">¶</a>
+        <li class="normal" id="section-3-2.12">Multi-party VoIP.<a href="#section-3-2.12" class="pilcrow">¶</a>
 </li>
-        <li class="normal" id="section-3-2.10">Reactions. A content format might decide to use replies to associate an emoji reaction with
-a given message, or simply as nothing.<a href="#section-3-2.10" class="pilcrow">¶</a>
+        <li class="normal" id="section-3-2.13">Message editing. A content format could define a fallback which references the edited message
+with a reply and using a difference syntax to highlight applicable changes.<a href="#section-3-2.13" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="section-3-2.14">Reactions. A content format might decide to provide a fallback by using replies to associate an
+emoji or textual reaction to a given message, or simply ignore it.<a href="#section-3-2.14" class="pilcrow">¶</a>
 </li>
       </ul>
 <p id="section-3-3">As implied above, a future content format document would be responsible for describing the exact
