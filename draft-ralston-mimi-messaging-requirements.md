@@ -91,7 +91,7 @@ capable of supporting. The features that messaging services currently support ar
   have the same safe failure mode.
 * Presence or online state. Like read receipts or typing notifications, presence has the same safe
   fallback mode.
-* Ability to reliably synchronise visible conversation history between messaging services.
+* Ability to reliably synchronize visible conversation history between messaging services.
 * Ability to port conversation history between messaging services.
 * Images, videos, files, and audio in messages. The content format would specify a fallback to
   (rich) text to support messaging services that are primarily text-based, such as by specifying
