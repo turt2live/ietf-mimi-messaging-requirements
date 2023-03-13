@@ -1,0 +1,220 @@
+
+
+
+
+More Instant Messaging Interoperability                       T. Ralston
+Internet-Draft                          The Matrix.org Foundation C.I.C.
+Intended status: Informational                             13 March 2023
+Expires: 14 September 2023
+
+
+                Requirements of Interoperable Messaging
+            draft-ralston-mimi-messaging-requirements-latest
+
+Abstract
+
+   This document describes a set of requirements for messaging services
+   to interoperate.
+
+   These requirements are independent of any particular protocol or
+   messaging service, describing the set of features an interoperable
+   messaging service should support.  Services should expect to go
+   beyond the requirements listed here, as MIMI's future content format
+   evolves.
+
+About This Document
+
+   This note is to be removed before publishing as an RFC.
+
+   The latest revision of this draft can be found at
+   https://turt2live.github.io/ietf-mimi-messaging-requirements/draft-
+   ralston-mimi-messaging-requirements.html.  Status information for
+   this document may be found at https://datatracker.ietf.org/doc/draft-
+   ralston-mimi-messaging-requirements/.
+
+   Discussion of this document takes place on the More Instant Messaging
+   Interoperability Working Group mailing list (mailto:mimi@ietf.org),
+   which is archived at https://mailarchive.ietf.org/arch/browse/mimi/.
+   Subscribe at https://www.ietf.org/mailman/listinfo/mimi/.
+
+   Source for this draft and an issue tracker can be found at
+   https://github.com/turt2live/ietf-mimi-messaging-requirements.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 14 September 2023.
+
+Copyright Notice
+
+   Copyright (c) 2023 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
+
+Table of Contents
+
+   1.  Introduction
+   2.  Minimum Feature Set
+   3.  Maximum Feature Set
+     3.1.  Moderation and Personal Safety Functionality
+   4.  Security Considerations
+   5.  IANA Considerations
+   Author's Address
+
+1.  Introduction
+
+   MIMI's charter seeks to establish an extensible set of messaging
+   features which make use of a future content format published by MIMI.
+   The charter also states that MIMI will use End-to-End Encryption
+   (E2EE), and that the content format must support E2EE.
+
+   This document describes a possible set of features that messaging
+   services should support.  By extension, it also includes what MIMI
+   should support in its future content format.  This document also
+   explores extensibility by contrasting a minimum and maximum feature
+   set for interoperability over MIMI.
+
+2.  Minimum Feature Set
+
+   The following are the minimum features for an interoperable messaging
+   service.  We consider group communication on the basis that 1:1
+   communication can typically be modelled as a subset of group
+   communication.
+
+   *  Encryption, as required by MIMI's charter, and all associated
+      features (device tracking, etc).
+
+   *  Reliable synchronisation of messages between messaging services,
+      avoiding gaps.
+
+   *  Text and rich text to represent nearly all features persisted to
+      the conversation history.
+
+   *  Ability to redact, remove, or delete a message, both as an
+      individual and as a room moderator.
+
+   *  Invite, kick, ban, and leave membership states within a
+      conversation.
+
+   *  Display names and avatars for users, to allow for personalization
+      beyond their identifier or username.
+
+   *  Direct messaging, or conversations of exactly 2 users.  The
+      underlying protocol might choose to treat DMs no different from
+      multi-user conversations, though messaging services might apply
+      semantics to represent DMs usefully to users.
+
+   *  Differentiation between users and their abilities.  For example,
+      roles for Moderators, Admins, etc.
+
+3.  Maximum Feature Set
+
+   This list is not exhaustive, but outlines some examples for what the
+   content format should be capable of supporting.  The features that
+   messaging services currently support are:
+
+   *  Names, topics/descriptions, and avatars for conversations for
+      personalization.  Messaging services which don't support these
+      aesthetic features would ignore them.
+
+   *  Read receipts/indicators when others in the room have read the
+      message.  If a messaging service doesn't support them, that
+      service would not produce receipts and ignore received receipts.
+      This is a safe failure mode for the feature.
+
+   *  Typing notifications when others in the room are writing a
+      message.  Like read receipts, services have the same safe failure
+      mode.
+
+   *  Presence or online state.  Like read receipts or typing
+      notifications, presence has the same safe fallback mode.
+
+   *  Ability to reliably synchronize visible conversation history
+      between messaging services.
+
+   *  Ability to port conversation history between messaging services.
+
+   *  Images, videos, files, and audio in messages.  The content format
+      would specify a fallback to (rich) text to support messaging
+      services that are primarily text-based, such as by specifying a
+      URL for users to click on to view the relevant media.
+
+   *  Voice messages are semantically distinct from file transfers, but
+      can be represented as audio file uploads with minor decoration
+      metadata in the content format.
+
+   *  Replies (also called "rich quoting") to reference specific
+      messages or parts of messages.  A content format specification
+      might define a fallback format to ensure messaging services that
+      do not support replies can still render something which looks
+      vaguely like a reply.
+
+   *  Threads to organize a conversation.  A content format
+      specification might define a fallback to Replies to keep a
+      reader's context in tact when using a messaging service that
+      doesn't support threads.
+
+   *  1:1 VoIP.  Messaging services which don't support VoIP could be
+      asked to say "a call is happening, but you can't join on this
+      device" under a content format, or, if the conference protocol
+      allows, a link for the user to click and join the call externally.
+
+   *  Multi-party VoIP.
+
+   *  Message editing.  A content format could define a fallback which
+      references the edited message with a reply and using a difference
+      syntax to highlight applicable changes.
+
+   *  Reactions.  A content format might decide to provide a fallback by
+      using replies to associate an emoji or textual reaction to a given
+      message, or simply ignore it.
+
+   As implied above, a future content format document would be
+   responsible for describing the exact details of how features fall
+   back, if at all.  This document offers non-binding suggestions.
+
+3.1.  Moderation and Personal Safety Functionality
+
+   Currently out of scope for MIMI, moderation, anti-spam, etc
+   functionality would likely be considered part of the "Maximum Feature
+   Set".  A suitable protocol could support functionality such as
+   ignoring or blocking individual users, "who can send invites to me"
+   controls, and similar features without needing to have a specific
+   content format specification necessarily.  For example, preventing
+   invites from being received could simply be a rejected action over
+   the delivery and transport layer.
+
+4.  Security Considerations
+
+   Security considerations for these features would be handled by other
+   documents, such as a content format document.
+
+5.  IANA Considerations
+
+   This document has no IANA actions.
+
+Author's Address
+
+   Travis Ralston
+   The Matrix.org Foundation C.I.C.
+   Email: travisr@matrix.org
