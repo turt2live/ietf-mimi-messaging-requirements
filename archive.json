@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-03-12T00:05:00.756643+00:00",
+  "timestamp": "2023-03-14T00:04:47.950854+00:00",
   "repo": "turt2live/ietf-mimi-messaging-requirements",
   "labels": [
     {
@@ -50,5 +50,55 @@
     }
   ],
   "issues": [],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOJGuIUM5L2HbL",
+      "title": "tweak reqs",
+      "url": "https://github.com/turt2live/ietf-mimi-messaging-requirements/pull/1",
+      "state": "MERGED",
+      "author": "ara4n",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-03-13T00:04:36Z",
+      "updatedAt": "2023-03-13T00:07:03Z",
+      "baseRepository": "turt2live/ietf-mimi-messaging-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "1ad6a564b992072b7c3d83ab16d2269f25e62715",
+      "headRepository": "ara4n/ietf-mimi-messaging-requirements",
+      "headRefName": "patch-1",
+      "headRefOid": "637cb15ffcf289b5dcebcdb18362f26a23e4275e",
+      "closedAt": "2023-03-13T00:07:03Z",
+      "mergedAt": "2023-03-13T00:07:03Z",
+      "mergedBy": "turt2live",
+      "mergeCommit": {
+        "oid": "0eb2a3f12124321aa9218b4dbeb9332374f3d5b5"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJGuIUM5Po2xI",
+          "commit": {
+            "abbreviatedOid": "aab429d"
+          },
+          "author": "turt2live",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-03-13T00:06:46Z",
+          "updatedAt": "2023-03-13T00:06:47Z",
+          "comments": [
+            {
+              "originalPosition": 19,
+              "body": "```suggestion\r\n* Ability to reliably synchronize visible conversation history between messaging services.\r\n```",
+              "createdAt": "2023-03-13T00:06:46Z",
+              "updatedAt": "2023-03-13T00:06:47Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
